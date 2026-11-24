@@ -31,7 +31,7 @@ const phrRoot = document.getElementById('phrases');
 if (phrRoot) {
   let sid = situations[0].id; let detail = '';
   const list = el('div'); const box = el('div', { class: 'opts' });
-  const input = el('input', { type: 'text', maxlength: '80', id: 'detail', placeholder: 'for example: you were on your phone at dinner' });
+  const input = el('input', { type: 'text', maxlength: '80', id: 'detail', placeholder: 'e.g. you were on your phone' });
   const draw = () => {
     box.replaceChildren(...situations.map((s) => el('button', { type: 'button', 'aria-pressed': String(s.id === sid), onclick: () => { sid = s.id; draw(); } }, s.label)));
     const ph = buildPhrases(situations.find((s) => s.id === sid), detail);
